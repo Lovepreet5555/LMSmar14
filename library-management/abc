@@ -1,0 +1,5 @@
+mode: set
+library-management/main.go:9.13,13.16 2 0
+library-management/main.go:13.16,15.3 1 0
+library-management/main.go:18.2,22.39 3 0
+library-management/main.go:22.39,24.3 1 0

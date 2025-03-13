@@ -12,11 +12,11 @@ var jwtKey = []byte("secret_key")
 
 // GenerateJWT creates a JWT token for a user
 func GenerateJWT(userID uint, role string) (string, error) {
-	// Define the claims
+
 	claims := jwt.MapClaims{
 		"user_id": userID,
 		"role":    role,
-		"exp":     time.Now().Add(24 * time.Hour).Unix(), // Token expires in 1 day
+		"exp":     time.Now().Add(24 * time.Hour).Unix(),
 	}
 
 	// Create the token with HS256 signing method
@@ -34,7 +34,7 @@ func GenerateJWT(userID uint, role string) (string, error) {
 
 // ValidateJWT parses and validates a JWT token
 func ValidateJWT(tokenString string) (uint, string, error) {
-	// Parse the token with claims
+
 	claims := jwt.MapClaims{}
 	token, err := jwt.ParseWithClaims(tokenString, claims, func(token *jwt.Token) (interface{}, error) {
 		return jwtKey, nil
@@ -51,7 +51,7 @@ func ValidateJWT(tokenString string) (uint, string, error) {
 		return 0, "", errors.New("invalid user_id")
 	}
 
-	// Extract role from claims
+	// Extract role
 	role, ok := claims["role"].(string)
 	if !ok {
 		return 0, "", errors.New("invalid role")

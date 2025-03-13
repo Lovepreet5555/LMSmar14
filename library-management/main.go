@@ -8,7 +8,6 @@ import (
 
 func main() {
 	// Initialize the database and handle errors
-	// Pass 'false' as you are not running in a test environment
 	db, err := config.ConnectDatabase(false)
 	if err != nil {
 		log.Fatalf("Database initialization failed: %v", err)

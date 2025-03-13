@@ -8,14 +8,14 @@ import (
 	"gorm.io/gorm"
 )
 
-// DB holds the database connection instance
+// DB here is connection instance
 var DB *gorm.DB
 
-// ConnectDatabase initializes the database connection
+// ConnectDatabase function initializes the database connection
 func ConnectDatabase(isTest bool) (*gorm.DB, error) {
 	if isTest {
 		// Mock database for unit testing
-		return DB, nil // We just return the mock DB here in tests
+		return DB, nil 
 	}
 
 	// Actual database connection for normal use
@@ -26,7 +26,7 @@ func ConnectDatabase(isTest bool) (*gorm.DB, error) {
 		return nil, err
 	}
 
-	// Perform a simple query to test the connection
+	// To test the connection
 	database.Exec("SELECT 1")
 
 	// Auto-migrate database tables

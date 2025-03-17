@@ -45,30 +45,38 @@ func Login(db *gorm.DB) gin.HandlerFunc {
 			return
 		}
 
-		// Prepare response data excluding password
+		// Include libraries if the user is not an "owner"
 		userResponse := gin.H{
 			"role":  user.Role,
 			"token": token,
 		}
 
-		// Conditionally exclude Library for owner role
+		// Fetch libraries if the user is not an owner
 		if user.Role != "owner" {
+			// Load user's libraries
+			var libraries []models.Library
+			if err := db.Model(&user).Association("Library").Find(&libraries); err != nil {
+				c.JSON(http.StatusInternalServerError, gin.H{"error": "Error fetching libraries"})
+				return
+			}
+
+			// Construct user response including library data
 			userResponse["user"] = gin.H{
-				"ID":      user.ID,
-				"Name":    user.Name,
-				"Email":   user.Email,
-				"Contact": user.Contact,
-				//"role":    user.Role,
-				// Excluding the role here as it's already in the response
+				"ID":        user.ID,
+				"Name":      user.Name,
+				"Email":     user.Email,
+				"Contact":   user.Contact,
+				"Role":      user.Role,
+				"Libraries": libraries, // Include libraries here
 			}
 		} else {
-			// For owner, we don't include Library field
+			// For owners, you can leave it empty or add more relevant data as needed
 			userResponse["user"] = gin.H{
 				"ID":      user.ID,
 				"Name":    user.Name,
 				"Email":   user.Email,
 				"Contact": user.Contact,
-				//"role":    user.Role,
+				"Role":    user.Role,
 			}
 		}
 

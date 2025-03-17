@@ -1,0 +1,104 @@
+.admin-add-book-container {
+    display: flex;
+    justify-content: center; // Center horizontally
+    align-items: flex-start; // Align content at the top to avoid being centered
+    min-height: 100vh; // Full viewport height to ensure the form takes up full height
+    background-color: #f1f1f1; // Light gray background
+    padding-top: 120px; // Adjusted padding to add more space between navbar and form
+  
+    .content {
+      width: 80%; // Increase the width by 2.5 times (210% of previous width)
+      max-width: 2100px; // Max width to limit the form size on large screens
+      padding: 30px; // Moderate padding for better readability
+      background-color: #ffffff; // White background for the form box
+      border-radius: 12px; // Rounded corners for the box
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1); // Shadow to create depth
+  
+      // Ensure the form is responsive on smaller screens
+      @media (max-width: 768px) {
+        width: 95%; // Slightly adjust for smaller screens
+        padding: 20px; // Reduce padding on smaller screens
+      }
+    }
+  
+    h2 {
+      font-size: 28px; // Larger font for the title
+      font-weight: 600;
+      color: #333;
+      margin-bottom: 20px; // Reduced margin for compact design
+      text-align: center;
+      font-family: 'Arial', sans-serif;
+    }
+  
+    .form-group {
+      margin-bottom: 15px; // Reduced space between form fields for compact layout
+    }
+  
+    label {
+      font-size: 18px; // More readable label size
+      font-weight: bold;
+      color: #333;
+      display: block;
+      margin-bottom: 8px; // Adjusted space between label and input
+      font-family: 'Arial', sans-serif;
+    }
+  
+    input {
+      width: 100%; // Ensure inputs take the full width of the form container
+      padding: 12px; // Moderate padding for better usability
+      margin-top: 5px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 16px;
+      box-sizing: border-box;
+      transition: border 0.3s ease-in-out;
+  
+      &:focus {
+        border-color: #007bff;
+        outline: none;
+        box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+      }
+    }
+  
+    button {
+      background-color: #007bff; // Blue color for "Add Book" action
+      color: white;
+      padding: 12px 20px; // Adjusted padding to fit better inside the form
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 18px;
+      font-weight: bold;
+      transition: background-color 0.3s, transform 0.2s ease-in-out;
+      width: 100%; // Full width button for consistency across form fields
+  
+      &:hover {
+        background-color: #0056b3; // Darker blue on hover
+        transform: scale(1.05);
+      }
+  
+      &:disabled {
+        background-color: #ddd;
+        cursor: not-allowed;
+      }
+    }
+  
+    .error-message {
+      color: red;
+      margin-top: 15px;
+      font-size: 16px;
+      font-weight: bold;
+      text-align: center;
+      font-family: 'Arial', sans-serif;
+    }
+  
+    .success-message {
+      color: green;
+      margin-top: 15px;
+      font-size: 16px;
+      font-weight: bold;
+      text-align: center;
+      font-family: 'Arial', sans-serif;
+    }
+  }
+  

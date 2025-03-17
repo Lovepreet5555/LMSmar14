@@ -1,0 +1,103 @@
+.admin-remove-book-container {
+  display: flex;
+  justify-content: center; // Center horizontally
+  align-items: flex-start; // Align content at the top
+  min-height: 100vh; // Full height of the viewport
+  background-color: #f1f1f1; // Light background
+  padding-top: 80px; // Space from the top to avoid overlapping with navbar
+
+  .content {
+    width: 85%; // Wider for better layout
+    max-width: 1300px; // Max width for large screens
+    padding: 40px; // Increase padding for a spacious layout
+    margin-top: 50px; // Start below navbar
+    background-color: #ffffff; // White background
+    border-radius: 12px; // Smoother rounded corners
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1); // More depth with shadow
+
+    @media (max-width: 768px) {
+      width: 95%; // Adjust width for smaller screens
+      padding: 25px; // Reduce padding for smaller screens
+    }
+  }
+
+  h2 {
+    font-size: 24px; // Larger title
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 30px; // More spacing below the title
+    text-align: center;
+    font-family: 'Arial', sans-serif;
+  }
+
+  .form-group {
+    margin-bottom: 25px; // Space between form fields
+  }
+
+  label {
+    font-size: 18px; // More readable label
+    font-weight: bold;
+    color: #333;
+    display: block; // Block-level label
+    margin-bottom: 10px;
+    font-family: 'Arial', sans-serif;
+  }
+
+  input {
+    width: 100%;
+    padding: 15px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 16px;
+    box-sizing: border-box;
+    transition: border 0.3s ease-in-out;
+
+    &:focus {
+      border-color: #007bff;
+      outline: none;
+      box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+    }
+  }
+
+  button {
+    background-color: #dc3545; // Red color for remove action
+    color: white;
+    padding: 15px 25px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: bold;
+    transition: background-color 0.3s, transform 0.2s ease-in-out;
+    width: 100%;
+
+    &:hover {
+      background-color: #c82333; // Darker red on hover
+      transform: scale(1.05);
+    }
+
+    &:disabled {
+      background-color: #ddd;
+      cursor: not-allowed;
+    }
+  }
+
+  .error-message {
+    color: red;
+    margin-top: 20px;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    font-family: 'Arial', sans-serif;
+  }
+
+  .success-message {
+    color: green;
+    margin-top: 20px;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    font-family: 'Arial', sans-serif;
+  }
+}

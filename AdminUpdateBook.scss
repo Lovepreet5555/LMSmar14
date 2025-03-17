@@ -1,0 +1,104 @@
+.admin-update-book-container {
+    display: flex;
+    justify-content: center; // Center horizontally
+    align-items: flex-start; // Start below navbar instead of centered
+    min-height: 100vh; // Full viewport height
+    background-color: #f1f1f1; // Light gray background
+    padding-top: 80px; // Space from the top to avoid overlapping with navbar
+  
+    .content {
+      width: 85%; // Slightly wider form for better layout
+      max-width: 1300px; // Limit width for large screens
+      padding: 40px; // More padding for better readability
+      margin-top: 50px; // Start below navbar
+      background-color: #ffffff; // White background
+      border-radius: 12px; // Smoother rounded corners
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1); // Softer and deeper shadow for modern feel
+  
+      @media (max-width: 768px) {
+        width: 95%; // Make it more flexible for smaller screens
+        padding: 25px; // Reduce padding for smaller screens
+      }
+    }
+  
+    h2 {
+      font-size: 24px; // Slightly bigger title
+      font-weight: 600;
+      color: #333;
+      margin-bottom: 30px;
+      text-align: center;
+      font-family: 'Arial', sans-serif;
+    }
+  
+    .form-group {
+      margin-bottom: 25px; // More spacing between form fields
+    }
+  
+    label {
+      font-size: 18px; // More readable label
+      font-weight: bold;
+      color: #333;
+      display: block; // Ensure labels align correctly
+      margin-bottom: 10px;
+      font-family: 'Arial', sans-serif;
+    }
+  
+    input {
+      width: 100%;
+      padding: 15px;
+      margin-top: 5px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 16px;
+      box-sizing: border-box;
+      transition: border 0.3s ease-in-out;
+  
+      &:focus {
+        border-color: #007bff;
+        outline: none;
+        box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+      }
+    }
+  
+    button {
+      background-color: #28a745; // Green color for update action
+      color: white;
+      padding: 15px 25px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 18px;
+      font-weight: bold;
+      transition: background-color 0.3s, transform 0.2s ease-in-out;
+      width: 100%;
+  
+      &:hover {
+        background-color: #218838; // Darker green on hover
+        transform: scale(1.05);
+      }
+  
+      &:disabled {
+        background-color: #ddd;
+        cursor: not-allowed;
+      }
+    }
+  
+    .error-message {
+      color: red;
+      margin-top: 20px;
+      font-size: 16px;
+      font-weight: bold;
+      text-align: center;
+      font-family: 'Arial', sans-serif;
+    }
+  
+    .success-message {
+      color: green;
+      margin-top: 20px;
+      font-size: 16px;
+      font-weight: bold;
+      text-align: center;
+      font-family: 'Arial', sans-serif;
+    }
+  }
+  

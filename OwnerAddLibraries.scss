@@ -1,0 +1,102 @@
+/* OwnerAddLibraries.scss */
+
+.owner-add-library-container {
+    display: flex;
+    padding: 20px;
+  }
+  
+  .add-library-content {
+    flex: 1;
+    padding: 30px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    margin-left: 20px;
+  }
+  
+  h2 {
+    color: #333;
+    font-size: 28px;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  
+  .add-library-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .form-group {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  label {
+    font-size: 14px;
+    color: #333;
+    margin-bottom: 8px;
+  }
+  
+  input {
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    outline: none;
+    transition: border-color 0.3s ease;
+  }
+  
+  input:focus {
+    border-color: #007bff;
+  }
+  
+  button {
+    background-color: #271272;
+    color: #fff;
+    padding: 12px 18px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+  }
+  
+  button:hover {
+    background-color: #0056b3;
+  }
+  
+  .success-message {
+    color: green;
+    text-align: center;
+    font-size: 16px;
+    margin-bottom: 15px;
+  }
+  
+  .error-message {
+    color: red;
+    text-align: center;
+    font-size: 16px;
+    margin-bottom: 15px;
+  }
+  
+  @media screen and (max-width: 768px) {
+    .owner-add-library-container {
+      flex-direction: column;
+      padding: 15px;
+    }
+  
+    .add-library-content {
+      margin-left: 0;
+      padding: 20px;
+    }
+  
+    h2 {
+      font-size: 24px;
+    }
+  
+    button {
+      padding: 10px 15px;
+    }
+  }
+  
